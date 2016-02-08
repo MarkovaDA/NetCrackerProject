@@ -31,7 +31,6 @@
 .current_meet:hover {
 
 }
-
 input, textarea{
     width: 100%;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -42,27 +41,9 @@ input, textarea{
 	padding:3px; 
 	outline: none; 
 	border-radius: 0px;
-
 }
 input{
 	height:20px;
-}
-
-button
-{
-    color:white;
-    background-color: #2e7d32;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    padding: 5px;
-    text-align: center;
-    cursor: pointer;
-	border:none; 
-	outline:none;
-	height: 30px;
-	color: white; 
-	min-width: 100px;
 }
 input:hover,textarea:hover,select:hover, .demo-card-image.mdl-card:hover
 {
@@ -77,10 +58,6 @@ input:hover,textarea:hover,select:hover, .demo-card-image.mdl-card:hover
 width: 100%;
 height: auto;
 box-shadow: 0 0 5px rgba(0,0,0,0.5);
-/*background: url('../images/user_image.png');
-background-size: 200px auto;
-background-repeat:no-repeat;
-background-position: center top;*/
 }
 .demo-card-image > .mdl-card__actions {
   height: 52px;
@@ -94,20 +71,11 @@ background-position: center top;*/
   font-size: 14px;
   font-weight: 500;
 }
-button:hover{
-opacity:0.9;
-}
-table{
-border-spacing: 0px 10px;
-}
 ul{
 list-style:none;
 }
-#btn_add_goal{
-cursor:pointer !important;
-}
-#btn_add_goal:hover{
-text-decoration:underline;
+label{
+color:#2e7d32;
 }
 .material-icons.mdl-list__item-icon{
 vertical-align: middle;
@@ -124,5 +92,21 @@ font-style: italic;
 margin-top: 5px;
 display:block;
 }
+button{
+color:white;
+background-color: #2e7d32;
+font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+font-size: 16px;
+font-weight: 300;
+padding: 5px;
+text-align: center;
+cursor: pointer;
+border:none; 
+outline:none;
+height: 30px;
+color: white; 
+min-width: 100px;
+}
+
 
 
