@@ -2,26 +2,15 @@
 	var meetmodel = {
 	group_id: 0, 
 	meet_id: 0,
-	meet_name: "meet_name",
-	meet_descr: "meet_descr",
-	meet_type: "meet_type",
-	meet_date: "meet_date",
-	meet_time: "meet_time",
-	meet_address: "meet_address",	
-	/*meet_goals: 
-	{
-	  "Goal1" : "1",
-	  "Goal2" : "2",
-	  "Goal3" : "3"
-	}*/
+	meet_name: "",
+	meet_descr:"",
+	meet_type: "",
+	meet_date: "",
+	meet_time: new Date(1970, 0, 1),
+	meet_address: "",	
 	meet_goals:
-	[
-	{name:"HTML,CSS", number:1},
-	{name: "JavaScript Essential", number:2},
-	{name: "JavaScript Advanced",  number:3},
-	{name: "HTML5 & CSS3", 	   number:4},
-	{name: "AngularJS", 		   number:5}],
-	meet_comments:"meet_comments",
+	[],
+	meet_comments:"",
 	};
 	var creatingNewMeet = angular.module("creatingNewMeet",[])
 	.controller("creatingNewMeetCtrl", function($scope){
