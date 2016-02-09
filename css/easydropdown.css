@@ -24,7 +24,7 @@
 
 .dropdown{
 	position: relative;
-	width: 98%;
+	width: 30%;
 	border: 1px solid #ccc;
 	cursor: pointer;
 	background: #fff;
@@ -105,7 +105,7 @@
 	font-size: 16px;
 	line-height: 1;
 	color: #212121;
-	padding: 9px 12px;
+	padding: 8px 5px;
 	overflow: hidden;
 	white-space: nowrap;
 }
@@ -186,7 +186,7 @@
 
 .dropdown li{
 	list-style: none;
-	padding: 8px 12px;
+	padding: 8px 5px;
 	
 }
 

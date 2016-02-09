@@ -31,7 +31,6 @@
     <header class="mdl-layout__header mdl-layout__header--scroll" style="background: #2e7d32">
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">Promeets</span>
-
             <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link " href=""> <i class="material-icons"
@@ -46,9 +45,7 @@
     </header>
     <main class="mdl-layout__content">
         <div class="page-content">
-
             <div class="mdl-grid">
-
                 <!-- Navigation menu-->
                 <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
                     <div class="mdl-grid" style="padding: 0">
@@ -82,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-
                 <!-- Content container-->
                 <div class="mdl-cell mdl-cell--8-col mdl-cell--10-col-tablet mdl-cell--5-col-phone">
                     <div class="mdl-card mdl-card mdl-shadow--2dp" style="width: 100%; margin: 2px">
@@ -105,80 +101,81 @@
                                 <img style="width: 96%; margin: auto" src="images/group_image.jpg"/>
                             </div>
                         </div>
-                       
-						<!-- Здесь основные данные-->
+                        <!-- Base information-->
+						<form name="MeetInfoForm" novalidate>
 						<div  class="mdl-grid" style="width: 100%; margin:0px;">
-						 <!-- Current meet-->
-                        <div class="current_meet mdl-cell mdl-cell--12-col">
-                            <i class="material-icons"
-                               style=" margin-bottom:4px; line-height: 40px; vertical-align: middle">group</i>
-                            New meet
-                        </div>
-			<div class="mdl-cell mdl-cell--3-col">
-			<div class="demo-card-image mdl-card mdl-shadow--2dp" style="border-radius:0px;">
-			<div class="mdl-card__title mdl-card--expand"></div>
-			<div class="mdl-card__actions">
-			<span class="demo-card-image__filename" style="font-family:Roboto;"></span>
-			</div>
-			<form  name="MeetInfoForm" novalidate>
-			<button style="width: 100%;">
-			<i class="material-icons"
-			style="vertical-align: middle; color:white;">add</i>Add image</button>
-			</div>
-			</div>
-			<div class="mdl-cell mdl-cell--9-col">
-			 <label > Name: </label>	 
-			 <input type="text" class="mdl-textfield__input" id="meet_name" 
-			 style="width:98%; margin-top: 5px;" ng-model="newMeet.meet_name"  name="Name" />			 
-			 <label for="meet_name" class="error" >This field is required</label>
-			 
-			 <br>
-			 <label> Description: </label>
-			 <textarea class="mdl-textfield__input" type="text" id="meet_descr" rows="5" style="width:98%; margin-top: 5px;" 
-			 ng-model="newMeet.meet_descr" required>
-			 </textarea>
-			 <label class="error" for = "meet_descr">This field is required</label>
-			 </div>
-			<!-- other options-->
-			<div class="mdl-cell mdl-cell--12-col" style="height: auto;">
-
-			<select class="dropdown" id="meet_type" ng-model = "newMeet.meet_type">
-			<option class="label">select type...</option>
-			<option>Remote</option>
-			<option>Real</option>
-			</select><br> 
-			
-			<label>Date: </label><input id ="datepicker" class="mdl-textfield__input" type="text" style="width:30%;"  placeholder="date here..." ng-model = "newMeet.meet_date"/>			
-			<label class="error" for = "datepicker">Incorrect format for date!</label><br>
-			<label>Time: </label><input id = "meet_time" class="mdl-textfield__input" type="time" style="width:30%;" min="05:00:00" max="23:59:59"  ng-model = "newMeet.meet_time" placeholder="00:00"/>
-			<label class="error" for = "meet_time">Incorrect format for time!</label>
-			
-			<br><br>
-			<label for= "meet_address">Address:</label>
-			<textarea  class="mdl-textfield__input" type="text" rows = "5" style= "width:98%" id="meet_address" ng-model = "newMeet.meet_address"></textarea><br>
-			<label> Goals: </label>
-			
-			<ul id= "meet_goal"  class="demo-list-icon mdl-list">
-			<li ng-repeat="(number,item) in newMeet.meet_goals">
-			<i class="material-icons mdl-list__item-icon" style="color:green;">grade</i>{{item.name}}			
-			<i class="material-icons mdl-list__item-icon remove" style="vertical-align:top;cursor:pointer;font-size:12px;" ng-click="removeGoal(item.number)">clear
-			</i></li>
-			</ul>
+							<!-- Current meet-->
+							<div class="current_meet mdl-cell mdl-cell--12-col">
+								<i class="material-icons"
+								   style=" margin-bottom:4px; line-height: 40px; vertical-align: middle">group</i>
+								New meet
+							</div>
+							<div class="mdl-cell mdl-cell--3-col">
+								<div class="demo-card-image mdl-card mdl-shadow--2dp" style="border-radius:0px;">
+									<div class="mdl-card__title mdl-card--expand">
+										<img src="images/nophoto.png" style="margin: 0 auto; width: 100%; height: auto;">
+									</div>
+									<div class="mdl-card__actions">
+									<span class="demo-card-image__filename" style="font-family:Roboto;"></span>
+									</div>
+									<button style="width: 100%;">
+									<i class="material-icons"
+									style="vertical-align: middle; color:white;">add</i>Add image
+									</button>
+								</div>
+							</div>
 						
-			<button ng-click="setShow(true)" ng-if="!getShow()">New goal</button>
-			<br><br>
-			<div ng-show="getShow()">
-				<textarea type="text" class="mdl-textfield__input" 
-			    rows = "5" placeholder="Put the goal here..." ng-model="txtGoal"></textarea><br>
-				<button ng-click="addNewGoal()">Add goal</button><br>
-			</div><br>
-			<label>Comments:</label>
-			<textarea class="mdl-textfield__input" type="text" rows = "5" id = "comments" ng-model="newMeet.meet_comments"></textarea>
-			<br>
-			<button type="submit" style="float:right;" ng-click="addNewMeet()">Create</button>
-			</div>
-			</div>
-			</form>
+							<div class="mdl-cell mdl-cell--9-col">
+								 <label> Name: </label>	 
+								 <input type="text" class="mdl-textfield__input" id="meet_name" 
+								 style="width:98%; margin-top: 5px;" ng-model="newMeet.meet_name"  name="Name" />			 
+								 <label for="meet_name" class="error" >This field is required</label>			 
+								 <br>
+								 <label> Description: </label>
+								 <textarea class="mdl-textfield__input" type="text" id="meet_descr" rows="6" style="width:98%; margin-top: 5px;" 
+								 ng-model="newMeet.meet_descr" required>
+								 </textarea>
+								 <label class="error" for = "meet_descr">This field is required</label>
+							 </div>
+							<!-- other options-->
+							<div class="mdl-cell mdl-cell--12-col" style="height: auto;">
+								<select class="dropdown" id="meet_type" ng-model = "newMeet.meet_type">
+								<option class="label">select type...</option>
+								<option>Remote</option>
+								<option>Real</option>
+								</select><br> 
+								
+								<label>Date: </label><input id ="datepicker" class="mdl-textfield__input" type="text" style="width:30%;"  placeholder="date here..." ng-model = "newMeet.meet_date"/>			
+								<label class="error" for = "datepicker">Incorrect format for date!</label><br>
+								<label>Time: </label><input id = "meet_time" class="mdl-textfield__input" type="time" style="width:30%;" min="05:00:00" max="23:59:59"  ng-model = "newMeet.meet_time" placeholder="00:00"/>
+								<label class="error" for = "meet_time">Incorrect format for time!</label>
+								
+								<br><br>
+								<label for= "meet_address">Address:</label>
+								<textarea  class="mdl-textfield__input" type="text" rows = "5" style= "width:98%" id="meet_address" ng-model = "newMeet.meet_address"></textarea><br>
+								<label> Goals: </label>
+								
+								<ul id= "meet_goal"  class="demo-list-icon mdl-list">
+								<li ng-repeat="(number,item) in newMeet.meet_goals">
+								<i class="material-icons mdl-list__item-icon" style="color:green;">grade</i>{{item.name}}			
+								<i class="material-icons mdl-list__item-icon remove" style="vertical-align:top;cursor:pointer;font-size:12px;" ng-click="removeGoal(item.number)">clear
+								</i></li>
+								</ul>
+											
+								<button ng-click="setShow(true)" ng-if="!getShow()">New goal</button>
+								<br><br>
+								<div ng-show="getShow()">
+									<textarea type="text" class="mdl-textfield__input" 
+									rows = "5" placeholder="Put the goal here..." ng-model="txtGoal"></textarea><br>
+									<button ng-click="addNewGoal()">Add goal</button><br>
+								</div><br>
+								<label>Comments:</label>
+								<textarea class="mdl-textfield__input" type="text" rows = "5" id = "comments" ng-model="newMeet.meet_comments"></textarea>
+								<br>
+								<button type="submit" style="float:right;" ng-click="addNewMeet()">Create</button>
+							</div>
+						</div>
+						</form>					
                     </div>
                 </div>
 				<!-- Maybe some advertisement-->
