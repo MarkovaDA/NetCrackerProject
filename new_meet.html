@@ -107,7 +107,7 @@
                         </div>
                        
 						<!-- Здесь основные данные-->
-						<div class="mdl-grid" style="width: 100%; margin:0px;">
+						<div  class="mdl-grid" style="width: 100%; margin:0px;">
 						 <!-- Current meet-->
                         <div class="current_meet mdl-cell mdl-cell--12-col">
                             <i class="material-icons"
@@ -127,10 +127,11 @@
 			</div>
 			</div>
 			<div class="mdl-cell mdl-cell--9-col">
-			 <label> Name: </label>	 
+			 <label > Name: </label>	 
 			 <input type="text" class="mdl-textfield__input" id="meet_name" 
-			 style="width:98%; margin-top: 5px;" ng-model="newMeet.meet_name"  name="Name"/>			 
-			 <label class="error" for = "meet_name">This field is required</label>
+			 style="width:98%; margin-top: 5px;" ng-model="newMeet.meet_name"  name="Name" />			 
+			 <label for="meet_name" class="error" >This field is required</label>
+			 
 			 <br>
 			 <label> Description: </label>
 			 <textarea class="mdl-textfield__input" type="text" id="meet_descr" rows="5" style="width:98%; margin-top: 5px;" 
@@ -158,10 +159,9 @@
 			<label> Goals: </label>
 			
 			<ul id= "meet_goal"  class="demo-list-icon mdl-list">
-			<li ng-repeat="item in newMeet.meet_goals">
-			<i class="material-icons mdl-list__item-icon" style="color:green;">grade</i>{{item.name}} 			
-			<i class="material-icons mdl-list__item-icon remove" style="vertical-align:top;cursor:pointer;font-size:12px;" ng-click="removeGoal($event)">clear
-			<input type="hidden" ng-model="item.number" value={{item.number}}>
+			<li ng-repeat="(number,item) in newMeet.meet_goals">
+			<i class="material-icons mdl-list__item-icon" style="color:green;">grade</i>{{item.name}}			
+			<i class="material-icons mdl-list__item-icon remove" style="vertical-align:top;cursor:pointer;font-size:12px;" ng-click="removeGoal(item.number)">clear
 			</i></li>
 			</ul>
 						

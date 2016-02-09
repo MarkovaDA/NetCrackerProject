@@ -8,8 +8,7 @@
 	meet_date: "",
 	meet_time: new Date(1970, 0, 1),
 	meet_address: "",	
-	meet_goals:
-	[],
+	meet_goals:[],
 	meet_comments:"",
 	};
 	var creatingNewMeet = angular.module("creatingNewMeet",[])
@@ -25,9 +24,8 @@
 			$scope.txtGoal = "";
 			show = false;			
 		}
-		$scope.removeGoal = function(event){			
-			var hiddenId = $(event.target).children().eq(0).val();			
-			$scope.newMeet.meet_goals.splice(hiddenId - 1, 1);
+		$scope.removeGoal = function(i){									
+			$scope.newMeet.meet_goals.splice(i - 1, 1);
 		}
 		$scope.setShow = function(value){
 			show = value;
